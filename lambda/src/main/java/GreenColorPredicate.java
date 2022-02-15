@@ -1,4 +1,4 @@
-public class AppleGreenColorPredicate implements ApplePredicate{
+public class GreenColorPredicate implements Predicate {
 
     @Override
     public boolean test(Apple apple) {

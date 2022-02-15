@@ -1,4 +1,4 @@
-public class AppleHeavyPredicate implements ApplePredicate{
+public class HeavyPredicate implements Predicate {
 
     @Override
     public boolean test(Apple apple) {

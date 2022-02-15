@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class AppleTest {
     public static void main(String[] args) {
@@ -9,18 +9,20 @@ public class AppleTest {
         inventory.add(new Apple(100, Color.GREEN));
         inventory.add(new Apple(50, Color.RED));
 
-        List<Apple> heavyApple = filterApples(inventory, new AppleHeavyPredicate());
-        List<Apple> colorApple = filterApples(inventory, new AppleGreenColorPredicate());
-        System.out.println(heavyApple);
-        System.out.println(colorApple);
+//        List<Apple> heavyApple = filterApples(inventory, new HeavyPredicate());
+//        List<Apple> colorApple = filterApples(inventory, new GreenColorPredicate());
+
+        System.out.println(filterApples(inventory, a -> a.getWeight() > 100 ));
+        System.out.println(filterApples(inventory, a -> a.getColor().equals(Color.GREEN)));
+
     }
 
-    private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate applePredicate) {
+    private static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> predicate) {
 
         List<Apple> result = new ArrayList<>();
 
         for (Apple apple : inventory) {
-            if (applePredicate.test(apple)) {
+            if (predicate.test(apple)) {
                 result.add(apple);
             }
         }
