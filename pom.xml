@@ -11,6 +11,7 @@
     <modules>
         <module>collections-review</module>
         <module>lambda</module>
+        <module>streams</module>
     </modules>
 
     <properties>
