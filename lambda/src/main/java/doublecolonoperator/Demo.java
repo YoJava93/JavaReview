@@ -36,7 +36,8 @@ public class Demo {
         Consumer<Integer> display2 = System.out::println;
         display2.accept(50);
 
-
+        BiFunction<DoubleColonPractice, Integer, Double> v2 = DoubleColonPractice::method;
+        //v2.apply(10);
 
 
 
